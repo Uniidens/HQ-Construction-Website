@@ -1,0 +1,14 @@
+/admin  /admin/index.html  200
+/admin/  /admin/index.html  200
+/admin/help  /admin/help.html  200
+/thank-you  /thank-you.html  200
+/content/*  /404.html  404
+/scripts/*  /404.html  404
+/templates/*  /404.html  404
+/netlify/*  /404.html  404
+/package.json  /404.html  404
+/netlify.toml  /404.html  404
+/README.md  /404.html  404
+/ADMIN_SETUP.md  /404.html  404
+/HQ-Construction-Website.code-workspace  /404.html  404
+/START-HERE.md  /404.html  404

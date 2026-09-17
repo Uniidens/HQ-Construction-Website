@@ -1,0 +1,20 @@
+{
+  "title": "Interior Remodeling Portfolio",
+  "category": "interior",
+  "project_type": "Selected interior remodeling work",
+  "location": "North Atlanta, Georgia",
+  "year": "",
+  "summary": "Selected interior remodeling photography from HQ Construction & Remodeling projects, including stair, flooring, trim, built-ins and open living areas.",
+  "published": true,
+  "featured": false,
+  "detail_page": false,
+  "display_order": 30,
+  "cover_image": "/assets/images/real-projects/remodel-01.webp",
+  "cover_alt": "Interior remodeling project by HQ Construction & Remodeling featuring finished staircase and trim",
+  "services": ["Interior remodeling", "Flooring", "Trim", "Built-ins"],
+  "images": [
+    {"image": "/assets/images/real-projects/remodel-02.webp", "alt": "Interior renovation by HQ Construction & Remodeling with flooring, entry trim and built-in shelving", "caption": "Interior renovation · entry, flooring and built-in shelving"},
+    {"image": "/assets/images/real-projects/remodel-03.webp", "alt": "Interior remodeling project by HQ Construction & Remodeling with updated flooring and open living area", "caption": "Interior renovation · open living area and flooring"}
+  ],
+  "scope": ""
+}

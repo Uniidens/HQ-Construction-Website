@@ -1,0 +1,42 @@
+{
+  "google": {
+    "url": "https://www.google.com/maps?place_id=ChIJ_Q6tIy2B9YgRZ4OdwB7z_KI&q=place_id%3AChIJ_Q6tIy2B9YgRZ4OdwB7z_KI"
+  },
+  "thumbtack": {
+    "url": "https://www.thumbtack.com/ga/cumming/handyman/hq-construction-remodeling-llc/service/492807234466619399"
+  },
+  "reviews": [
+    {
+      "name": "Tony N.",
+      "source": "Google",
+      "rating": 5,
+      "project": "Kitchen remodel",
+      "text": "I couldn’t be happier with the results. Sergey was professional, reliable, and truly dedicated to making sure everything came together correctly.",
+      "url": "https://www.google.com/maps?place_id=ChIJ_Q6tIy2B9YgRZ4OdwB7z_KI&q=place_id%3AChIJ_Q6tIy2B9YgRZ4OdwB7z_KI"
+    },
+    {
+      "name": "Karin Fazzio",
+      "source": "Google",
+      "rating": 5,
+      "project": "Kitchen & powder room",
+      "text": "They are professional, detail oriented, and deliver a high-quality product and service. Each night they cleaned up before the next day.",
+      "url": "https://www.google.com/maps?place_id=ChIJ_Q6tIy2B9YgRZ4OdwB7z_KI&q=place_id%3AChIJ_Q6tIy2B9YgRZ4OdwB7z_KI"
+    },
+    {
+      "name": "Natalia Mann",
+      "source": "Google",
+      "rating": 5,
+      "project": "Whole-home flooring",
+      "text": "Our old floor throughout the house looks like new. Great quality and a reasonable price. Thank you so much!",
+      "url": "https://www.google.com/maps?place_id=ChIJ_Q6tIy2B9YgRZ4OdwB7z_KI&q=place_id%3AChIJ_Q6tIy2B9YgRZ4OdwB7z_KI"
+    },
+    {
+      "name": "Aditya S.",
+      "source": "Thumbtack",
+      "rating": 5,
+      "project": "Door installation",
+      "text": "Sergey did a phenomenal job.",
+      "url": "https://www.thumbtack.com/ga/cumming/handyman/hq-construction-remodeling-llc/service/492807234466619399"
+    }
+  ]
+}

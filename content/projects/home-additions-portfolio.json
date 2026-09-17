@@ -1,0 +1,20 @@
+{
+  "title": "Home Additions Portfolio",
+  "category": "addition",
+  "project_type": "Selected addition and structural work",
+  "location": "North Atlanta, Georgia",
+  "year": "",
+  "summary": "Selected addition and structural project photography from HQ Construction & Remodeling.",
+  "published": true,
+  "featured": true,
+  "detail_page": false,
+  "display_order": 40,
+  "cover_image": "/assets/images/real-projects/addition-01.webp",
+  "cover_alt": "Home addition construction project by HQ Construction & Remodeling",
+  "services": ["Home additions", "Framing", "Exterior tie-in", "Finish work"],
+  "images": [
+    {"image": "/assets/images/real-projects/addition-02.webp", "alt": "Residential addition project under construction by HQ Construction & Remodeling", "caption": "Residential addition · structural and exterior work"},
+    {"image": "/assets/images/real-projects/addition-03.webp", "alt": "Home addition construction detail by HQ Construction & Remodeling", "caption": "Home addition · framing and tie-in work"}
+  ],
+  "scope": ""
+}

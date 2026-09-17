@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>HQ Website Manager</title>
+  <link rel="icon" href="/assets/images/hq-favicon.png" type="image/png">
+  <style>
+    :root{--gold:#d7ad4c;--ink:#0b0b0c;--paper:#f4f1ea}
+    html,body{background:var(--ink);margin:0;min-height:100%}
+    body:before{content:"";position:fixed;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#8d6920,var(--gold),#f0cf79,var(--gold),#8d6920);z-index:999999}
+    .hq-admin-links{position:fixed;right:18px;bottom:18px;z-index:999999;display:flex;gap:8px;font:700 11px/1 Arial,sans-serif}
+    .hq-admin-links a{background:#111;color:#fff;border:1px solid #444;padding:11px 13px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 8px 28px rgba(0,0,0,.22)}
+    .hq-admin-links a:first-child{background:var(--gold);color:#111;border-color:var(--gold)}
+    [class*="AppHeaderContent"]{background:#09090a!important}
+    [class*="AppHeaderContent"] svg{max-height:38px}
+      .hq-cms-error{display:none;position:fixed;inset:0;z-index:999998;background:#0b0b0c;color:#eee;padding:10vh 8vw;font:16px/1.6 Arial,sans-serif}
+    .hq-cms-error h1{color:#d7ad4c;font-size:clamp(30px,5vw,58px);margin:0 0 18px}.hq-cms-error a{color:#f0ce76}
+  </style>
+</head>
+<body>
+  <div id="cms-error" class="hq-cms-error"><h1>Website Manager could not load.</h1><p>The public website is unaffected. Check the internet connection and reload this page. If the problem continues, open the <a href="/admin/help.html">Admin Guide</a>.</p></div>
+  <noscript><div class="hq-cms-error" style="display:block"><h1>JavaScript is required.</h1><p>Enable JavaScript to use the HQ Website Manager.</p></div></noscript>
+  <div class="hq-admin-links"><a href="/" target="_blank" rel="noopener">View Site</a><a href="/admin/help.html">Admin Guide</a></div>
+  <script src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js" onerror="document.getElementById('cms-error').style.display='block'"></script>
+</body>
+</html>

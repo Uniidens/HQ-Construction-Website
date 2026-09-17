@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title desc">
+  <title id="title">HQ Construction and Remodeling LLC</title>
+  <desc id="desc">Gold HQ monogram beneath a stylized roofline with company name.</desc>
+  <g fill="none" stroke="#c9a84c" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M18 62 85 15l67 47"/>
+    <path d="M42 58V30h29"/>
+    <path d="M22 74h128" opacity=".55"/>
+  </g>
+  <text x="23" y="127" fill="#c9a84c" font-family="Arial Black, Arial, sans-serif" font-size="70" font-weight="900" letter-spacing="-6">HQ</text>
+  <g transform="translate(176 31)">
+    <text x="0" y="33" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="2.6">CONSTRUCTION</text>
+    <rect x="0" y="48" width="302" height="2" fill="#c9a84c" opacity=".8"/>
+    <text x="0" y="78" fill="#c9a84c" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3.7">&amp; REMODELING LLC</text>
+  </g>
+</svg>

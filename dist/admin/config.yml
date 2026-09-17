@@ -1,0 +1,102 @@
+backend:
+  name: github
+  repo: Uniidens/HQ-Construction-Website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://hqconstructionllc.com
+display_url: https://hqconstructionllc.com
+logo_url: /assets/images/hq-logo-official.png
+show_preview_links: false
+publish_mode: simple
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+# Photos uploaded through the manager are standardized for fast delivery.
+# Decap preserves the original aspect ratio because no crop ratio is set.
+media_processing:
+  enabled: true
+  format:
+    enabled: true
+    default: webp
+  quality: 82
+  strip_metadata: true
+  width: 1800
+  height: null
+
+collections:
+  - name: projects
+    label: Projects & Gallery
+    label_singular: Project
+    description: Add completed projects and photo sets. Published entries automatically update the gallery, relevant service pages, featured work and sitemap.
+    folder: content/projects
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    summary: "{{title}} · {{category}} · {{location}}"
+    sortable_fields: [title, category, display_order]
+    view_filters:
+      - { label: Featured, field: featured, pattern: "true" }
+      - { label: Kitchens, field: category, pattern: kitchen }
+      - { label: Bathrooms, field: category, pattern: bathroom }
+      - { label: Commercial, field: category, pattern: commercial }
+    editor:
+      preview: false
+    fields:
+      - { label: Project / Photo Set Name, name: title, widget: string, hint: "Example: Johns Creek Kitchen Remodel or Retail Barber Shop Build-Out" }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - { label: Kitchen, value: kitchen }
+          - { label: Bathroom, value: bathroom }
+          - { label: Interior Remodel, value: interior }
+          - { label: Home Addition, value: addition }
+          - { label: Decks & Outdoor Living, value: outdoor }
+          - { label: Commercial / Retail, value: commercial }
+          - { label: Flooring, value: flooring }
+          - { label: Cabinetry & Built-ins, value: cabinetry }
+          - { label: Exterior, value: exterior }
+          - { label: Other, value: other }
+      - { label: Project Type, name: project_type, widget: string, required: false, hint: "Short description shown with the project, e.g. Full kitchen remodel" }
+      - { label: City / Service Area, name: location, widget: string, required: false, hint: "Use city or general area only. Do not publish a customer's street address." }
+      - { label: Year, name: year, widget: string, required: false }
+      - { label: Short Summary, name: summary, widget: text, hint: "2–3 sentences. This is public and helps both customers and search engines understand the work." }
+      - { label: Published, name: published, widget: boolean, default: true, hint: "Turn off to hide this project everywhere without deleting it." }
+      - { label: Feature on Home Page, name: featured, widget: boolean, default: false }
+      - { label: Create Project Detail Page, name: detail_page, widget: boolean, default: true, hint: "Recommended for real completed projects. Turn off for broad portfolio/photo sets." }
+      - { label: Display Order, name: display_order, widget: number, value_type: int, default: 100, min: 0, max: 999, hint: "Lower numbers appear first." }
+      - { label: Cover Image, name: cover_image, widget: image, choose_url: false, allow_multiple: false }
+      - { label: Cover Image Description (Alt Text), name: cover_alt, widget: string, required: false, hint: "Recommended for SEO/accessibility. Describe what is actually visible. If left blank, the site uses the project title as a safe fallback." }
+      - label: Additional Project Photos
+        name: images
+        widget: list
+        required: false
+        collapsed: true
+        minimize_collapsed: true
+        summary: "{{fields.caption}}"
+        label_singular: Photo
+        allow_add: true
+        allow_remove: true
+        allow_reorder: true
+        fields:
+          - { label: Image, name: image, widget: image, choose_url: false, allow_multiple: false }
+          - { label: Image Description (Alt Text), name: alt, widget: string, required: false, hint: "Recommended. Plain-English description of the image; if blank, the project/caption is used as a fallback." }
+          - { label: Caption, name: caption, widget: string, required: false, hint: "Optional short public caption." }
+      - label: Services / Features
+        name: services
+        widget: list
+        required: false
+        label_singular: Service
+        field: { label: Service, name: service, widget: string }
+      - { label: Project Scope / Story, name: scope, widget: text, required: false, hint: "Shown on project detail pages. Keep this factual and specific to the work performed." }
+      - label: SEO Overrides
+        name: seo
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { label: SEO Title, name: title, widget: string, required: false, hint: "Leave blank to generate automatically." }
+          - { label: Meta Description, name: description, widget: text, required: false, hint: "Leave blank to use the project summary." }
