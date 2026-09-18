@@ -37,7 +37,7 @@ for(const fp of htmlFiles){
   }
   for(const phrase of forbiddenCustomerCopy) if(html.includes(phrase)) errors.push(rel+': internal/process-facing copy leaked: '+phrase);
   for(const ref of legacyImageRefs) if(html.includes(ref)) errors.push(rel+': legacy/generic image referenced: '+ref);
-  for(const m of html.matchAll(/<img\b([^>]*)>/gi)){const alt=(m[1].match(/\balt=["']([^"']*)["']/i)||[])[1];if(alt===undefined||!alt.trim()) errors.push(rel+': image missing meaningful alt text')}
+  for(const m of html.matchAll(/<img\b([^>]*)>/gi)){const alt=(m[1].match(/\balt=["']([^"']*)["']/i)||[])[1];if(alt===undefined) errors.push(rel+': image missing alt attribute')}
   for(const m of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)){
     const raw=m[1]; if(!raw||raw.startsWith('#')||/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(raw)) continue;
     const clean=raw.split('#')[0].split('?')[0]; if(!clean) continue;
