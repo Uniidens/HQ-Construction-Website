@@ -139,3 +139,84 @@
 .gallery-project-links strong{grid-area:title;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:1.35rem;line-height:1.05}
 .gallery-project-links b{grid-area:action;font-size:9px;text-transform:uppercase;letter-spacing:.08em}
 @media(max-width:700px){.gallery-project-links{grid-template-columns:1fr}.gallery-project-links a{grid-template-columns:1fr;grid-template-areas:"meta" "title" "action"}.gallery-project-links b{margin-top:7px}}
+
+
+/* About + Services scale correction
+   Keep these overview pages visually aligned with the rest of the site without
+   changing the dedicated SEO service/location pages. */
+.about-page .page-hero,
+.services-page .page-hero{
+  padding:82px 0 72px;
+}
+.about-page .page-hero h1,
+.services-page .page-hero h1{
+  max-width:860px;
+  font-size:clamp(2.9rem,4.7vw,5.15rem);
+  line-height:.98;
+}
+.about-page .page-hero p:not(.kicker),
+.services-page .page-hero p:not(.kicker){
+  max-width:700px;
+  font-size:1rem;
+  line-height:1.65;
+}
+.about-page .service-section,
+.services-page .service-section{
+  min-height:460px;
+}
+.about-page .service-section-media img,
+.services-page .service-section-media img{
+  min-height:460px;
+}
+.about-page .service-section-copy,
+.services-page .service-section-copy{
+  padding:56px clamp(36px,5vw,76px);
+}
+.about-page .service-section-copy h2,
+.services-page .service-section-copy h2{
+  font-size:clamp(2.15rem,3.15vw,3.55rem);
+  line-height:1.02;
+}
+.about-page .service-section-copy>p:not(.kicker),
+.services-page .service-section-copy>p:not(.kicker){
+  font-size:.95rem;
+  line-height:1.65;
+  max-width:650px;
+}
+.about-page .service-section-copy ul,
+.services-page .service-section-copy ul{
+  margin:16px 0 22px;
+  gap:7px 20px;
+}
+.about-page .service-section-copy li,
+.services-page .service-section-copy li{
+  font-size:11px;
+  line-height:1.45;
+}
+.services-page .anchor-nav a{
+  padding:14px 0;
+}
+.services-page .inline-cta{
+  padding:60px 0;
+}
+.services-page .inline-cta h2{
+  font-size:clamp(2rem,3.3vw,3.4rem);
+}
+@media(max-width:1050px){
+  .about-page .service-section,
+  .services-page .service-section{min-height:0}
+  .about-page .service-section-media img,
+  .services-page .service-section-media img{min-height:360px;max-height:440px}
+}
+@media(max-width:650px){
+  .about-page .page-hero,
+  .services-page .page-hero{padding:68px 0 58px}
+  .about-page .page-hero h1,
+  .services-page .page-hero h1{font-size:clamp(2.6rem,12vw,3.8rem)}
+  .about-page .service-section-media img,
+  .services-page .service-section-media img{min-height:280px;max-height:340px}
+  .about-page .service-section-copy,
+  .services-page .service-section-copy{padding:42px 22px}
+  .about-page .service-section-copy h2,
+  .services-page .service-section-copy h2{font-size:clamp(2rem,9.5vw,3rem)}
+}
