@@ -1,0 +1,38 @@
+{
+  "title": "Stair, Flooring & Built-In Interior Remodel",
+  "category": "interior",
+  "project_type": "Interior remodel",
+  "location": "",
+  "year": "",
+  "summary": "Completed interior remodel combining staircase finish work, flooring, entry trim, built-in shelving and updates to an open living area.",
+  "published": true,
+  "featured": false,
+  "detail_page": true,
+  "display_order": 30,
+  "cover_image": "/assets/images/real-projects/remodel-01.webp",
+  "cover_alt": "Completed interior remodel with finished staircase, trim and coordinated flooring",
+  "services": [
+    "Interior remodeling",
+    "Stair finish work",
+    "Flooring",
+    "Trim and carpentry",
+    "Built-in shelving"
+  ],
+  "images": [
+    {
+      "image": "/assets/images/real-projects/remodel-02.webp",
+      "alt": "Interior renovation with updated flooring, entry trim and built-in shelving",
+      "caption": "Entry, flooring and built-in shelving"
+    },
+    {
+      "image": "/assets/images/real-projects/remodel-03.webp",
+      "alt": "Completed interior remodel with updated flooring and open living area",
+      "caption": "Open living area and finished flooring"
+    }
+  ],
+  "scope": "Interior renovation work shown includes staircase and trim finishing, flooring, entry details and built-in shelving. The completed photos also show the updated open living area and coordinated finish package.",
+  "seo": {
+    "title": "Interior Remodel with Stairs, Flooring & Built-Ins | HQ Construction",
+    "description": "See a completed HQ interior remodel featuring stair finish work, flooring, trim, built-in shelving and updates to an open living area."
+  }
+}
