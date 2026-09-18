@@ -34,6 +34,14 @@ const slugify = s => String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').r
 const publicPath = p => p?.startsWith('/') ? p : `/${p || ''}`;
 const rel = p => publicPath(p).replace(/^\//,'');
 const projectSlug = p => p._slug || slugify(p.title);
+const metaDescription = (s='') => {
+  const clean=String(s).replace(/\s+/g,' ').trim();
+  if(clean.length>=70 && clean.length<=165) return clean;
+  if(clean.length>165) return clean.slice(0,162).replace(/\s+\S*$/,'')+'...';
+  const suffix=' Learn more about this HQ Construction & Remodeling project in North Atlanta.';
+  const combined=(clean+suffix).trim();
+  return combined.length>165 ? combined.slice(0,162).replace(/\s+\S*$/,'')+'...' : combined;
+};
 const markerReplace = (html, name, content) => {
   const start = `<!-- CMS:${name}:START -->`, end = `<!-- CMS:${name}:END -->`;
   const a = html.indexOf(start), b = html.indexOf(end);
