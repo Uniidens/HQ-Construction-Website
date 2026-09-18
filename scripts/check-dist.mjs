@@ -22,7 +22,7 @@ for(const fp of htmlFiles){
   if(h1s!==1) errors.push(rel+': expected exactly one h1, found '+h1s);
   if(!/<title>[^<]{8,}<\/title>/i.test(html)) errors.push(rel+': missing/short title');
   if(!noindexAllowed.has(rel)){
-    const desc=(html.match(/<meta\s+content=["']([^"']+)["']\s+name=["']description["']/i)||[])[1]||'';
+    const desc=((html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)||[])[1]||(html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i)||[])[1]||'');
     if(desc.length<70||desc.length>165) errors.push(rel+': meta description length '+desc.length+' (target 70-165)');
     const hasCanonical=/<link[^>]+rel=["']canonical["'][^>]*href=["']https:\/\/hqconstructionllc\.com\//i.test(html)||/<link[^>]+href=["']https:\/\/hqconstructionllc\.com\/[^"']*["'][^>]*rel=["']canonical["']/i.test(html);
     if(!hasCanonical) errors.push(rel+': missing canonical');
