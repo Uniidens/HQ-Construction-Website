@@ -1,0 +1,33 @@
+{
+  "title": "Double Vanity Bathroom Remodel",
+  "category": "bathroom",
+  "project_type": "Bathroom remodel",
+  "location": "",
+  "year": "",
+  "summary": "Completed bathroom remodel centered on a double-vanity installation with coordinated cabinetry, dual sinks, mirrors, fixtures and finish carpentry.",
+  "published": true,
+  "featured": false,
+  "detail_page": true,
+  "display_order": 20,
+  "cover_image": "/assets/images/real-projects/bathroom-vanity-01.webp",
+  "cover_alt": "Completed bathroom remodel with double vanity cabinetry, dual mirrors and coordinated fixtures",
+  "services": [
+    "Bathroom remodeling",
+    "Double vanity installation",
+    "Cabinetry",
+    "Fixture installation",
+    "Finish carpentry"
+  ],
+  "images": [
+    {
+      "image": "/assets/images/real-projects/bathroom-vanity-03.webp",
+      "alt": "Completed bathroom renovation with natural wood double vanity, dual sinks and mirrors",
+      "caption": "Double vanity, dual sinks and coordinated fixtures"
+    }
+  ],
+  "scope": "Bathroom remodeling work shown includes the double-vanity installation, cabinetry, sinks and fixtures, mirrors and finish carpentry. The project photos document the completed vanity wall and surrounding finishes.",
+  "seo": {
+    "title": "Double Vanity Bathroom Remodel | HQ Construction & Remodeling",
+    "description": "View a completed bathroom remodel by HQ Construction & Remodeling featuring a double vanity, cabinetry, dual sinks, mirrors and finish carpentry."
+  }
+}
