@@ -58,3 +58,5 @@ A VS Code workspace file, `HQ-Construction-Website.code-workspace`, is included 
 The dedicated website repository is intended to be public so the CMS does not need broad private-repository OAuth permissions; Netlify environment variables continue to hold API keys and mail credentials.
 
 See `ADMIN_SETUP.md` for the one-time GitHub/Netlify connection.
+
+<!-- deploy-trigger: 2026-09-18 point-1-production-sync -->
