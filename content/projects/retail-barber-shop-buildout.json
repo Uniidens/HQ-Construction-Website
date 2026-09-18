@@ -4,22 +4,60 @@
   "project_type": "Retail / barber shop interior build-out",
   "location": "",
   "year": "",
-  "summary": "Completed retail barber shop build-out featuring custom workstations, mirrors and shelving, a curved reception counter, display storage and a distinctive geometric lighting layout.",
+  "summary": "Completed retail barber shop build-out featuring custom barber stations, mirrors and shelving, a curved reception counter, retail display storage, wash-station cabinetry and a geometric lighting layout.",
   "published": true,
   "featured": true,
   "detail_page": true,
   "display_order": 5,
   "cover_image": "/assets/images/real-projects/barber-shop/barber-06.webp",
   "cover_alt": "Completed barber shop commercial build-out by HQ Construction & Remodeling with custom stations, reception counter and geometric ceiling lighting",
-  "services": ["Commercial remodeling", "Retail build-out", "Custom millwork", "Lighting", "Finish carpentry"],
-  "images": [
-    {"image": "/assets/images/real-projects/barber-shop/barber-01.webp", "alt": "Custom barber stations with mirrors, shelving and millwork completed by HQ Construction & Remodeling", "caption": "Custom barber stations · mirrors, shelving and integrated work surfaces"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-02.webp", "alt": "Curved reception counter in completed barber shop retail build-out by HQ Construction & Remodeling", "caption": "Reception area · curved counter and feature lighting"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-03.webp", "alt": "Retail display shelving and barber shop interior finishes completed by HQ Construction & Remodeling", "caption": "Retail display wall · shelving, finishes and lighting"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-04.webp", "alt": "Wide view of completed barber shop commercial interior with geometric ceiling lighting", "caption": "Completed interior · geometric ceiling lighting and coordinated finishes"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-05.webp", "alt": "Custom barber workstation with mirror and cabinetry completed by HQ Construction & Remodeling", "caption": "Barber workstation · custom cabinetry, mirror and lighting"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-07.webp", "alt": "Barber shop reception counter and custom wall stations completed by HQ Construction & Remodeling", "caption": "Reception and workstations · coordinated custom finish package"},
-    {"image": "/assets/images/real-projects/barber-shop/barber-08.webp", "alt": "Barber shop wash station and custom cabinetry in completed commercial build-out", "caption": "Wash station · cabinetry, fixtures and integrated storage"}
+  "services": [
+    "Commercial remodeling",
+    "Retail build-out",
+    "Custom millwork",
+    "Lighting",
+    "Finish carpentry"
   ],
-  "scope": "Commercial interior build-out and finish coordination, including custom barber workstations, mirrors and shelving, reception counter, display storage, lighting and finish details."
+  "images": [
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-01.webp",
+      "alt": "Custom barber stations with mirrors, shelving and millwork completed by HQ Construction & Remodeling",
+      "caption": "Custom barber stations · mirrors, shelving and integrated work surfaces"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-02.webp",
+      "alt": "Curved reception counter in completed barber shop retail build-out by HQ Construction & Remodeling",
+      "caption": "Reception area · curved counter and feature lighting"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-03.webp",
+      "alt": "Retail display shelving and barber shop interior finishes completed by HQ Construction & Remodeling",
+      "caption": "Retail display wall · shelving, finishes and lighting"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-04.webp",
+      "alt": "Wide view of completed barber shop commercial interior with geometric ceiling lighting",
+      "caption": "Completed interior · geometric ceiling lighting and coordinated finishes"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-05.webp",
+      "alt": "Custom barber workstation with mirror and cabinetry completed by HQ Construction & Remodeling",
+      "caption": "Barber workstation · custom cabinetry, mirror and lighting"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-07.webp",
+      "alt": "Barber shop reception counter and custom wall stations completed by HQ Construction & Remodeling",
+      "caption": "Reception and workstations · coordinated custom finish package"
+    },
+    {
+      "image": "/assets/images/real-projects/barber-shop/barber-08.webp",
+      "alt": "Barber shop wash station and custom cabinetry in completed commercial build-out",
+      "caption": "Wash station · cabinetry, fixtures and integrated storage"
+    }
+  ],
+  "scope": "Commercial interior build-out and finish coordination for a working barber shop. Completed work shown includes custom barber stations and millwork, mirrors and shelving, a curved reception counter, retail display storage, wash-station cabinetry, lighting and coordinated interior finishes.",
+  "seo": {
+    "title": "Retail Barber Shop Build-Out | HQ Construction & Remodeling",
+    "description": "See a completed barber shop build-out by HQ Construction & Remodeling with custom stations, millwork, reception, retail displays and geometric lighting."
+  }
 }
