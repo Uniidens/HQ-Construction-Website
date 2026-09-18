@@ -107,7 +107,7 @@ function localWork(projects, city){
 }
 function paragraphize(s=''){ return String(s).split(/\n{2,}/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join(''); }
 function projectPage(template,p){
-  const slug=projectSlug(p), seoTitle=p.seo?.title || `${p.title} | HQ Construction & Remodeling`, seoDescription=p.seo?.description || p.summary;
+  const slug=projectSlug(p), seoTitle=p.seo?.title || `${p.title} | HQ Construction & Remodeling`, seoDescription=metaDescription(p.seo?.description || p.summary);
   const imgs=imageItems(p);
   const facts=[p.project_type&&['Project type',p.project_type],p.location&&['Service area',p.location],p.year&&['Year',p.year]].filter(Boolean).map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
   const services=p.services.length?`<div class="project-services"><h3>Scope & features</h3><ul>${p.services.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`:'';
