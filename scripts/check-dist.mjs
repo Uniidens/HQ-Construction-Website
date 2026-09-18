@@ -67,7 +67,5 @@ const robots=await fs.readFile(path.join(dist,'robots.txt'),'utf8');
 if(!robots.includes('Sitemap: https://hqconstructionllc.com/sitemap.xml')) errors.push('robots.txt: sitemap declaration missing');
 if(!(await exists(path.join(dist,'admin','index.html')))) errors.push('admin/index.html: missing from build');
 
-if(errors.length){console.error('Production QA failed:
-'+errors.join('
-'));process.exit(1)}
+if(errors.length){console.error('Production QA failed:\n'+errors.join('\n'));process.exit(1)}
 console.log('Production QA passed: '+htmlFiles.length+' customer-facing HTML pages validated for navigation, SEO, accessibility basics, internal links, forms, imagery, sitemap and customer-facing copy.');
