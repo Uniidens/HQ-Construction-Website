@@ -1,0 +1,38 @@
+{
+  "title": "Residential Home Addition",
+  "category": "addition",
+  "project_type": "Home addition",
+  "location": "",
+  "year": "",
+  "summary": "Completed residential addition showing the new exterior volume, structural framing, exterior tie-in, windows, siding and finished integration with the existing home.",
+  "published": true,
+  "featured": true,
+  "detail_page": true,
+  "display_order": 40,
+  "cover_image": "/assets/images/real-projects/addition-01.webp",
+  "cover_alt": "Completed residential home addition by HQ Construction & Remodeling with new exterior walls, windows and siding",
+  "services": [
+    "Home addition",
+    "Structural framing",
+    "Exterior tie-in",
+    "Windows and siding",
+    "Exterior finish work"
+  ],
+  "images": [
+    {
+      "image": "/assets/images/real-projects/addition-02.webp",
+      "alt": "Residential home addition during construction with structural and exterior work visible",
+      "caption": "Structural and exterior addition work"
+    },
+    {
+      "image": "/assets/images/real-projects/addition-03.webp",
+      "alt": "Residential home addition construction detail showing framing and tie-in work",
+      "caption": "Framing and tie-in details"
+    }
+  ],
+  "scope": "Residential addition work shown includes the added structure, framing and tie-in to the existing home, exterior wall and window installation, siding and related finish work. Photos document both construction-phase details and the completed exterior.",
+  "seo": {
+    "title": "Residential Home Addition Project | HQ Construction & Remodeling",
+    "description": "View a completed residential home addition by HQ Construction & Remodeling with framing, exterior tie-in, windows, siding and finished integration."
+  }
+}
