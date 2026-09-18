@@ -6,7 +6,9 @@ const dist=path.join(root,'dist');
 const errors=[];
 const noindexAllowed=new Set(['404.html','thank-you.html']);
 const forbiddenCustomerCopy=['bid-pack reference','never bid-pack','reference imagery','Projects are shown only when the project entry is tagged','Real project photography.','Selected completed work from HQ Construction & Remodeling project files.'];
-const legacyImageRefs=['assets/images/hero-kitchen.jpg','assets/images/project-living-dark.webp','assets/images/project-kitchen-forest.webp','assets/images/service-addition.webp','assets/images/project-kitchen-walnut.webp'];\n// Point 1 customer-flow checks\nconst customerFlowPages=new Set(['about.html','gallery.html','service-areas.html']);
+const legacyImageRefs=['assets/images/hero-kitchen.jpg','assets/images/project-living-dark.webp','assets/images/project-kitchen-forest.webp','assets/images/service-addition.webp','assets/images/project-kitchen-walnut.webp'];
+// Point 1 customer-flow checks
+const customerFlowPages=new Set(['about.html','gallery.html','service-areas.html']);
 
 async function walk(dir){const out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory()) out.push(...await walk(p)); else out.push(p)}return out}
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
@@ -35,7 +37,9 @@ for(const fp of htmlFiles){
     const footer=(html.match(/<footer class=["']site-footer["']>[\s\S]*?<\/footer>/i)||[])[0]||'';
     if((footer.match(/services\.html#/g)||[]).length) errors.push(rel+': footer contains duplicate service-anchor navigation');
   }
-  for(const phrase of forbiddenCustomerCopy) if(html.includes(phrase)) errors.push(rel+': internal/process-facing copy leaked: '+phrase);\n  if(customerFlowPages.has(rel)){const matches=(html.match(/href=[\"']contact\.html#estimate[\"']/g)||[]).length;if(matches<2) errors.push(rel+': customer flow needs an in-page estimate CTA in addition to header CTA');}\n  if(html.includes('Licensed & Insured · Locally Owned')) errors.push(rel+': unverified licensing/insurance claim remains in public output');
+  for(const phrase of forbiddenCustomerCopy) if(html.includes(phrase)) errors.push(rel+': internal/process-facing copy leaked: '+phrase);
+  if(customerFlowPages.has(rel)){const matches=(html.match(/href=[\"']contact\.html#estimate[\"']/g)||[]).length;if(matches<2) errors.push(rel+': customer flow needs an in-page estimate CTA in addition to header CTA');}
+  if(html.includes('Licensed & Insured · Locally Owned')) errors.push(rel+': unverified licensing/insurance claim remains in public output');
   for(const ref of legacyImageRefs) if(html.includes(ref)) errors.push(rel+': legacy/generic image referenced: '+ref);
   for(const m of html.matchAll(/<img\b([^>]*)>/gi)){const alt=(m[1].match(/\balt=["']([^"']*)["']/i)||[])[1];if(alt===undefined) errors.push(rel+': image missing alt attribute')}
   for(const m of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)){
@@ -50,7 +54,9 @@ const contact=await fs.readFile(path.join(dist,'contact.html'),'utf8');
 for(const token of ['data-netlify="true"','name="project-request"','netlify-honeypot="bot-field"','enctype="multipart/form-data"','action="thank-you.html"']) if(!contact.includes(token)) errors.push('contact.html: form configuration missing '+token);
 
 const css=await fs.readFile(path.join(dist,'css','styles.css'),'utf8');
-if(!css.includes('FINAL CUSTOMER-FACING PAGE NORMALIZATION')) errors.push('styles.css: final normalization layer missing');\nif(!css.includes('.preview-ribbon:empty{display:none}')) errors.push('styles.css: empty preview ribbon still consumes customer-facing space');\nif(!css.includes("real-projects/kitchen-remodel-02.webp")) errors.push('styles.css: contact CTA should use real project photography');
+if(!css.includes('FINAL CUSTOMER-FACING PAGE NORMALIZATION')) errors.push('styles.css: final normalization layer missing');
+if(!css.includes('.preview-ribbon:empty{display:none}')) errors.push('styles.css: empty preview ribbon still consumes customer-facing space');
+if(!css.includes("real-projects/kitchen-remodel-02.webp")) errors.push('styles.css: contact CTA should use real project photography');
 for(const ref of legacyImageRefs) if(css.includes(ref)) errors.push('styles.css: legacy/generic image referenced: '+ref);
 
 const sitemap=await fs.readFile(path.join(dist,'sitemap.xml'),'utf8');
@@ -61,5 +67,7 @@ const robots=await fs.readFile(path.join(dist,'robots.txt'),'utf8');
 if(!robots.includes('Sitemap: https://hqconstructionllc.com/sitemap.xml')) errors.push('robots.txt: sitemap declaration missing');
 if(!(await exists(path.join(dist,'admin','index.html')))) errors.push('admin/index.html: missing from build');
 
-if(errors.length){console.error('Production QA failed:\n'+errors.join('\n'));process.exit(1)}
+if(errors.length){console.error('Production QA failed:
+'+errors.join('
+'));process.exit(1)}
 console.log('Production QA passed: '+htmlFiles.length+' customer-facing HTML pages validated for navigation, SEO, accessibility basics, internal links, forms, imagery, sitemap and customer-facing copy.');
