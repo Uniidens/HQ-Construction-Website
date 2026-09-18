@@ -1,19 +1,27 @@
 {
-  "title": "Bathroom Remodeling Portfolio",
+  "title": "Bathroom Remodeling",
   "category": "bathroom",
-  "project_type": "Selected bathroom remodeling work",
+  "project_type": "Bathroom remodeling",
   "location": "North Atlanta, Georgia",
   "year": "",
-  "summary": "Selected bathroom and vanity work completed by HQ Construction & Remodeling.",
+  "summary": "Completed bathroom and vanity work by HQ Construction & Remodeling.",
   "published": true,
   "featured": false,
   "detail_page": false,
   "display_order": 20,
   "cover_image": "/assets/images/real-projects/bathroom-vanity-01.webp",
   "cover_alt": "Bathroom remodeling project by HQ Construction & Remodeling with double vanity cabinetry and mirrors",
-  "services": ["Bathroom remodeling", "Vanity installation", "Finish carpentry"],
+  "services": [
+    "Bathroom remodeling",
+    "Vanity installation",
+    "Finish carpentry"
+  ],
   "images": [
-    {"image": "/assets/images/real-projects/bathroom-vanity-03.webp", "alt": "Bathroom renovation by HQ Construction & Remodeling with natural wood double vanity and dual sinks", "caption": "Bathroom vanity installation · natural wood double vanity"}
+    {
+      "image": "/assets/images/real-projects/bathroom-vanity-03.webp",
+      "alt": "Bathroom renovation by HQ Construction & Remodeling with natural wood double vanity and dual sinks",
+      "caption": "Bathroom vanity installation · natural wood double vanity"
+    }
   ],
   "scope": ""
 }
