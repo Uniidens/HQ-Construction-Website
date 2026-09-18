@@ -1,0 +1,39 @@
+{
+  "title": "White Cabinet Kitchen Remodel",
+  "category": "kitchen",
+  "project_type": "Kitchen remodel",
+  "location": "",
+  "year": "",
+  "summary": "Completed kitchen remodel featuring white cabinetry, updated countertops and backsplash, a center island, finished flooring and recessed lighting.",
+  "published": true,
+  "featured": true,
+  "detail_page": true,
+  "display_order": 10,
+  "cover_image": "/assets/images/real-projects/kitchen-remodel-01.webp",
+  "cover_alt": "Completed white cabinet kitchen remodel by HQ Construction & Remodeling with built-in appliances, countertops and backsplash",
+  "services": [
+    "Kitchen remodeling",
+    "Cabinetry",
+    "Countertops",
+    "Backsplash",
+    "Island and finish work",
+    "Flooring and lighting coordination"
+  ],
+  "images": [
+    {
+      "image": "/assets/images/real-projects/kitchen-remodel-02.webp",
+      "alt": "Completed kitchen renovation with white cabinetry, backsplash, countertops and built-in appliances",
+      "caption": "Cabinetry, backsplash and finished work surfaces"
+    },
+    {
+      "image": "/assets/images/real-projects/kitchen-remodel-03.webp",
+      "alt": "Completed kitchen remodel with center island, finished flooring and recessed ceiling lighting",
+      "caption": "Island, flooring and recessed lighting"
+    }
+  ],
+  "scope": "Kitchen renovation completed as a coordinated interior remodel. Work shown includes cabinetry and built-ins, countertops and backsplash, island and work surfaces, flooring, lighting coordination and finish details.",
+  "seo": {
+    "title": "White Cabinet Kitchen Remodel | HQ Construction & Remodeling",
+    "description": "See a completed HQ Construction & Remodeling kitchen remodel featuring white cabinetry, countertops, backsplash, island, flooring and recessed lighting."
+  }
+}
