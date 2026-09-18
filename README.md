@@ -60,3 +60,5 @@ The dedicated website repository is intended to be public so the CMS does not ne
 See `ADMIN_SETUP.md` for the one-time GitHub/Netlify connection.
 
 <!-- deploy-trigger: 2026-09-18 point-1-production-sync -->
+
+<!-- point-1-final-retry-2026-09-18 -->
