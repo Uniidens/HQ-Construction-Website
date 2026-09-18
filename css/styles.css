@@ -527,3 +527,21 @@
   .site-footer .footer-grid{grid-template-columns:1fr}
   .site-footer .footer-brand{grid-column:auto}
 }
+
+
+/* Point 1 QA — customer-facing polish */
+.preview-ribbon:empty{display:none}
+.contact-band-bg{
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.36)),
+    url('../assets/images/real-projects/kitchen-remodel-02.webp') center/cover no-repeat;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+.site-nav a:focus-visible{outline-color:#f2cf72}
