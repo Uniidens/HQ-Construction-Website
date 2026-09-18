@@ -103,7 +103,7 @@ function localWork(projects, city){
   const picks=projects.filter(p=>normalizeLocation(p.location).includes(city)).slice(0,3);
   if(!picks.length) return '';
   const displayCity=city.replace(/\b\w/g,c=>c.toUpperCase());
-  return `<section class="section section--cream cms-recent-work"><div class="shell"><div class="section-intro"><div><p class="kicker">Completed work nearby</p><h2>HQ projects in ${esc(displayCity)}.</h2></div><p>Projects are shown only when the project entry is tagged with this city or service area.</p></div><div class="cms-project-cards">${picks.map(p=>`<article class="cms-project-card"><button data-caption="${esc(p.title)}" data-lightbox="${esc(rel(p.cover_image))}"><img src="${esc(rel(p.cover_image))}" alt="${esc(p.cover_alt)}" loading="lazy"></button><div><small>${esc(labels[p.category])}</small><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>${p.detail_page?`<a class="text-link" href="projects/${projectSlug(p)}.html">View project <span>↗</span></a>`:`<a class="text-link" href="gallery.html">View gallery <span>↗</span></a>`}</div></article>`).join('')}</div></div></section>`;
+  return `<section class="section section--cream cms-recent-work"><div class="shell"><div class="section-intro"><div><p class="kicker">Completed work nearby</p><h2>HQ projects in ${esc(displayCity)}.</h2></div><p>Recent HQ Construction &amp; Remodeling projects completed in and around this service area.</p></div><div class="cms-project-cards">${picks.map(p=>`<article class="cms-project-card"><button data-caption="${esc(p.title)}" data-lightbox="${esc(rel(p.cover_image))}"><img src="${esc(rel(p.cover_image))}" alt="${esc(p.cover_alt)}" loading="lazy"></button><div><small>${esc(labels[p.category])}</small><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>${p.detail_page?`<a class="text-link" href="projects/${projectSlug(p)}.html">View project <span>↗</span></a>`:`<a class="text-link" href="gallery.html">View gallery <span>↗</span></a>`}</div></article>`).join('')}</div></div></section>`;
 }
 function paragraphize(s=''){ return String(s).split(/\n{2,}/).map(p=>p.trim()).filter(Boolean).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join(''); }
 function projectPage(template,p){
@@ -123,6 +123,19 @@ function sitemap(projects){
   const entries=staticUrls.map(u=>{ const imgs=u==='/gallery.html'?projects.flatMap(imageItems):[]; return `<url><loc>${BASE_URL}${u}</loc><lastmod>${lastmod}</lastmod>${imageXml(imgs)}</url>`; });
   for(const p of projects.filter(p=>p.detail_page)) entries.push(`<url><loc>${BASE_URL}/projects/${projectSlug(p)}.html</loc><lastmod>${lastmod}</lastmod>${imageXml(imageItems(p))}</url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${entries.join('\n')}\n</urlset>\n`;
+}
+
+function polishCustomerHtml(html, nested=false){
+  const p=nested?'../':'';
+  const explore=`<div><h3>Explore</h3><a href="${p}index.html">Home</a><a href="${p}services.html">Services</a><a href="${p}gallery.html">Our Work</a><a href="${p}index.html#reviews">Reviews</a><a href="${p}about.html">About</a><a href="${p}service-areas.html">Service Areas</a><a href="${p}contact.html">Contact</a></div>`;
+  const services=`<div><h3>Services</h3><a href="${p}kitchen-remodeling.html">Kitchen Remodeling</a><a href="${p}bathroom-remodeling.html">Bathroom Remodeling</a><a href="${p}basement-remodeling.html">Basements &amp; Interiors</a><a href="${p}home-additions.html">Home Additions</a><a href="${p}decks-outdoor-living.html">Decks &amp; Outdoor Living</a><a href="${p}commercial-remodeling.html">Commercial Remodeling</a></div>`;
+  html=html.replace(/<div><h3>Explore<\/h3>[\s\S]*?<\/div>/,explore);
+  html=html.replace(/<div><h3>Services<\/h3>[\s\S]*?<\/div>/,services);
+  html=html
+    .replaceAll('Real photography from this HQ Construction &amp; Remodeling project.','Completed project photos from HQ Construction &amp; Remodeling.')
+    .replaceAll('Real work. Real project photos.','Completed projects.')
+    .replaceAll('Project stories','Featured projects');
+  return html;
 }
 
 await fs.rm(DIST,{recursive:true,force:true}); await fs.mkdir(DIST,{recursive:true});
@@ -156,4 +169,18 @@ await fs.mkdir(path.join(DIST,'projects'),{recursive:true});
 for(const p of projects.filter(p=>p.detail_page)) await fs.writeFile(path.join(DIST,'projects',`${projectSlug(p)}.html`),projectPage(template,p));
 await fs.writeFile(path.join(DIST,'data','projects.json'),JSON.stringify(projects.map(({_slug,...p})=>({...p,slug:_slug})),null,2));
 await fs.writeFile(path.join(DIST,'sitemap.xml'),sitemap(projects));
+
+const rootHtml=(await fs.readdir(DIST)).filter(f=>f.endsWith('.html'));
+for(const file of rootHtml){
+  const fp=path.join(DIST,file);
+  await fs.writeFile(fp,polishCustomerHtml(await fs.readFile(fp,'utf8'),false));
+}
+const projectOut=path.join(DIST,'projects');
+if(await exists(projectOut)){
+  for(const file of (await fs.readdir(projectOut)).filter(f=>f.endsWith('.html'))){
+    const fp=path.join(projectOut,file);
+    await fs.writeFile(fp,polishCustomerHtml(await fs.readFile(fp,'utf8'),true));
+  }
+}
+console.log('Polished customer-facing HTML navigation, footer and copy.');
 console.log(`Built ${projects.length} published project/photo sets; ${projects.filter(p=>p.detail_page).length} detail page(s).`);
